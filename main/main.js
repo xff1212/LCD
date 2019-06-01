@@ -1,10 +1,11 @@
+module.exports = function main(num) {
 var zero=new Array( "._.",
 			        "|.|",
 			        "|_|");
 var one =new Array( "...",
 			        "..|",
 			        "..|");
-var two =new Array(" ._.",
+var two =new Array("._.",
 			        "._|",
 			        "|_.");
 var three =new Array("._.",
@@ -28,44 +29,57 @@ var eight = new Array("._.",
 var nine = new Array( "._.",
 			          "|_|",
 			          "..|");
-
+var a = new Array();
 function myFunction(y) {
   switch (y) {
-	  case 0:
-		print(zero);
+	  case '0':
+		a.push(zero);
 		break;
-	  case 1:
-		print(one);
+	  case '1':
+		a.push(one);
 		break;
-	  case 2:
-		print(two);
+	  case '2':
+		a.push(two);
 		break;
-	  case 3:
-		print(three);
+	  case '3':
+		a.push(three);
 		break;
-	  case 4:
-	   print(four);
+	  case '4':
+	   a.push(four);
 		break;
-	  case 5:
-	   print(five);
+	  case '5':
+	   a.push(five);
 		break;
-	  case  6:
-		print(six);
+	  case  '6':
+		a.push(six);
 		break;
-	  case  7:
-	  print(seven);
+	  case  '7':
+	  a.push(seven);
 	  break;
-	  case  8:
-	  print(eight);
+	  case  '8':
+	  a.push(eight);
 	  break;
-	  case  9:
-	  print(nine);
+	  case  '9':
+	  a.push(nine);
 	  break;
 }
 }
+var l = num.length;
+for(var i = 0 ; i < l;i++){
+	myFunction(num.charAt(i));
+}
+var first = new Array();
+var second = new Array();
+var third = new Array();
+for(var j = 0; j < l; j++) {
+first.push(a[j][0]);
+second.push(a[j][1]);
+third.push(a[j][2]);
+}
+first.join(' ');
+second.join(' ');
+third.join(' ');
+var str = first.join(' ')+'\n' + second.join(' ')+'\n' + third.join(' ') + '\n';
+return str;
 
-function print( number){
-	console.log(number[0]+'/n'+number[1]+'/n'+number[2]+' ')
-}
-
-myFunction(9)
+};
